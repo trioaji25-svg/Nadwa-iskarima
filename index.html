@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>✦ Smart Attendance</h2>
+    <p class="menu-title">MENU UTAMA</p>
+    <a href="#dashboard">⌂ Dashboard</a>
+    <a href="#absensi">✓ Absensi Siswa</a>
+    <a href="#riwayat">▤ Riwayat Absensi</a>
+    <a href="#data">♙ Data Siswa</a>
+    <button onclick="logout()">⇥ Logout</button>
+</div>
+
+<main class="content">
+    <header>
+        <div>
+            <h1>Dashboard</h1>
+            <p>Selamat datang di Smart Attendance!</p>
+        </div>
+        <div class="date" id="tanggal"></div>
+    </header>
+
+    <section class="cards" id="dashboard">
+        <div class="card">
+            <p>Total Siswa</p>
+            <h2 id="totalSiswa">0</h2>
+        </div>
+        <div class="card">
+            <p>Hadir</p>
+            <h2 id="totalHadir">0</h2>
+        </div>
+        <div class="card">
+            <p>Izin / Sakit</p>
+            <h2 id="totalIzin">0</h2>
+        </div>
+        <div class="card">
+            <p>Alfa</p>
+            <h2 id="totalAlfa">0</h2>
+        </div>
+    </section>
+
+    <section class="panel" id="absensi">
+        <h2>Form Absensi Siswa</h2>
+        <form id="formAbsensi">
+            <label>Nama Siswa</label>
+            <input type="text" id="nama" placeholder="Masukkan nama siswa" required>
+
+            <label>Kelas</label>
+            <input type="text" id="kelas" placeholder="Contoh: XII RPL 1" required>
+
+            <label>Status Kehadiran</label>
+            <select id="status" required>
+                <option value="">Pilih status</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Izin">Izin</option>
+                <option value="Sakit">Sakit</option>
+                <option value="Alfa">Alfa</option>
+            </select>
+
+            <button type="submit" class="submit-btn">
+                Simpan Absensi
+            </button>
+        </form>
+    </section>
+
+    <section class="panel" id="riwayat">
+        <h2>Riwayat Absensi</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Kelas</th>
+                        <th>Status</th>
+                        <th>Tanggal</th>
+                        <th>Jam</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelAbsensi"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="panel" id="data">
+        <h2>Informasi Aplikasi</h2>
+        <p>Smart Attendance adalah aplikasi berbasis web untuk
+        membantu sekolah mengelola kehadiran siswa secara digital.</p>
+    </section>
+
+    <footer>© 2026 Smart Attendance | Student Attendance System</footer>
+</main>
+
+<script>
+    if (sessionStorage.getItem("adminLogin") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

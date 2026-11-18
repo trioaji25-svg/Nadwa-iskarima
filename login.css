@@ -1,0 +1,178 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #081a36, #123d75, #2563eb);
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 430px;
+    text-align: center;
+}
+
+.brand {
+    color: white;
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto auto 15px;
+    border-radius: 18px;
+    font-size: 30px;
+}
+
+.brand h1 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.brand p {
+    color: #cbdcf8;
+    font-size: 13px;
+}
+
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 15px 45px #00000030;
+}
+
+.tabs {
+    display: flex;
+    background: #eff4fc;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.tabs button {
+    width: 50%;
+    padding: 11px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: #64748b;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.tabs button.active {
+    background: #2563eb;
+    color: white;
+}
+
+.login-box h2 {
+    color: #172d50;
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dbe3ef;
+    border-radius: 9px;
+    margin-bottom: 17px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #2563eb;
+}
+
+.password-box {
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.password-box input {
+    flex: 1;
+    min-width: 0;
+}
+
+.password-box button {
+    padding: 12px 9px;
+    border: none;
+    background: #eaf1ff;
+    color: #2563eb;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.main-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 9px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.main-btn:hover {
+    background: #1748ad;
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 15px;
+    color: #dc2626;
+}
+
+footer {
+    color: #cbdcf8;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+@media (max-width: 450px) {
+    .login-box {
+        padding: 22px;
+    }
+
+    .brand h1 {
+        font-size: 23px;
+    }
+}

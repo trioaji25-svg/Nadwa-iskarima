@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <title>Smart Attendance</title>
+  
+  <!-- Tautan ke Manifest & Icon -->
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="apple-touch-icon" href="./icon.svg">
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8fafc;
+      color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 28px 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      max-width: 400px;
+      width: 100%;
+    }
+    img.logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      color: #0f172a;
+    }
+    p {
+      margin: 0 0 20px;
+      font-size: 14px;
+      color: #64748b;
+    }
+    button {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #1d4ed8;
+    }
+    #btnInstall {
+      display: none;
+      background-color: #10b981;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="./icon.svg" alt="Logo Smart Attendance" class="logo">
+    <h1>Smart Attendance</h1>
+    <p>Sistem Absensi Digital Cepat & Praktis</p>
+    
+    <!-- Area konten aplikasi absensi kamu -->
+    <button onclick="alert('Silakan sesuaikan tombol ini dengan fitur absensi kamu!')">Mulai Absensi</button>
+    
+    <!-- Tombol instal otomatis muncul jika browser mendukung -->
+    <button id="btnInstall">📲 Instal Aplikasi ke HP</button>
+  </div>
+
+  <script>
+    // 1. Mendaftarkan Service Worker agar bisa diinstal
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Service Worker aktif:', reg.scope))
+          .catch(err => console.error('Service Worker gagal:', err));
+      });
+    }
+
+    // 2. Memunculkan tombol Instal Aplikasi secara langsung
+    let deferredPrompt;
+    const btnInstall = document.getElementById('btnInstall');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      btnInstall.style.display = 'block';
+    });
+
+    btnInstall.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          btnInstall.style.display = 'none';
+        }
+        deferredPrompt = null;
+      }
+    });
+  </script>
+</body>
+</html>

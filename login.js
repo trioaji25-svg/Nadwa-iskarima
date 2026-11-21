@@ -112,7 +112,7 @@ loginForm.addEventListener("submit", function(event) {
 
         alert("Login berhasil! Selamat datang, " + akun.nama);
 
-        window.location.href = "index.html";
+        window.location.href = "Login.page.html";
 
     } else {
         message.textContent = "Email atau password salah!";

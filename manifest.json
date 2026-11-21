@@ -1,19 +1,24 @@
-{{
+
+{
   "name": "Smart Attendance",
-  "short_name": "Attendance",
-  "description": "Aplikasi Absensi Digital Smart Attendance",
-  "start_url": "./index.html",
-  "scope": "./",
+  "short_name": "SmartAttend",
+  "description": "Aplikasi absensi siswa berbasis web",
+  "start_url": "/Nadwa-iskarima/login.html",
+  "scope": "/Nadwa-iskarima/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2563eb",
   "orientation": "portrait",
+  "background_color": "#0D1B2A",
+  "theme_color": "#1565C0",
   "icons": [
     {
-      "src": "./icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "src": "/Nadwa-iskarima/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Nadwa-iskarima/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Smart Attendance</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="brand">
+      <h1>Smart Attendance</h1>
+      <p>Buat Akun Baru</p>
+    </div>
+
+    <form id="registerForm">
+      <label>Nama Lengkap</label>
+      <input type="text" id="nama" placeholder="Masukkan nama" required>
+
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Masukkan email" required>
+
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Buat password" required>
+
+      <label>Konfirmasi Password</label>
+      <input type="password" id="confirmPassword" placeholder="Ulangi password" required>
+
+      <button type="submit" class="main-btn">Daftar Akun</button>
+    </form>
+
+    <p id="message"></p>
+
+    <p>Sudah punya akun?
+      <a href="login.html">Login di sini</a>
+    </p>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
